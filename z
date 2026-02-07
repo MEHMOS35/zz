@@ -1,0 +1,226 @@
+local _0x1a2b3c = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local _0x4d5e6f = _0x1a2b3c:CreateWindow({
+   Name = "MEHMOS AUTO WIN",
+   LoadingTitle = "Mehmos Script",
+   LoadingSubtitle = "by MEHMOS35",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "MehmosConfig"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+ 
+   }
+)
+
+local _0x7g8h9i = game:GetService("Players")
+local _0x1j2k3l = game:GetService("RunService")
+local _0x4m5n6o = game:GetService("UserInputService")
+local _0x7p8q9r = game:GetService("ReplicatedStorage")
+local _0x1s2t3u = _0x7g8h9i.LocalPlayer
+
+repeat task.wait() until workspace.CurrentCamera
+
+local _0x4v5w6x = CFrame.new(-1500.53, 119.08, 4227.90)
+
+local _0xa1b2c3, _0xd4e5f6, _0xg7h8i9, _0xj1k2l3, _0xm4n5o6, _0xp7q8r9 = false, nil, false, nil, false, nil
+
+local function _0xs1t2u3()
+    if _0xd4e5f6 then return end
+    _0xd4e5f6 = _0x1j2k3l.Heartbeat:Connect(function()
+        local _0xv4w5x6 = _0x1s2t3u.Character
+        local _0xy7z8a9 = _0xv4w5x6 and _0xv4w5x6:FindFirstChildOfClass("Humanoid")
+        local _0xb1c2d3e4 = _0xv4w5x6 and _0xv4w5x6:FindFirstChild("HumanoidRootPart")
+        local _0xf5g6h7i8 = workspace.CurrentCamera
+        if _0xy7z8a9 and _0xb1c2d3e4 and _0xf5g6h7i8 then
+            _0xb1c2d3e4.CFrame = _0x4v5w6x
+            local _0xj9k1l2m3 = _0xf5g6h7i8.CFrame.LookVector
+            _0xy7z8a9:Move(Vector3.new(_0xj9k1l2m3.X, 0, _0xj9k1l2m3.Z), true)
+        end
+    end)
+end
+
+local function _0xn4o5p6q7()
+    if _0xd4e5f6 then
+        _0xd4e5f6:Disconnect()
+        _0xd4e5f6 = nil
+    end
+end
+
+local function _0xv3w4x5y6()
+    pcall(function()
+        for _0xz7a8b9c1 = 1, 20 do
+            _0x7p8q9r.Remotes.Rebirth:FireServer()
+        end
+    end)
+end
+
+local function _0xd2e3f4g5()
+    if _0xj1k2l3 then return end
+    _0xj1k2l3 = _0x1j2k3l.Heartbeat:Connect(function()
+        _0xv3w4x5y6()
+    end)
+end
+
+local function _0xh6i7j8k9()
+    if _0xj1k2l3 then
+        _0xj1k2l3:Disconnect()
+        _0xj1k2l3 = nil
+    end
+end
+
+local function _0xp5q6r7s8()
+    pcall(function()
+        for _0xt9u1v2w3 = 1, 10 do
+            _0x7p8q9r.Remotes.GainSpeed_Walk:FireServer()
+        end
+    end)
+end
+
+local function _0xx4y5z6a7()
+    if _0xp7q8r9 then return end
+    _0xp7q8r9 = _0x1j2k3l.Heartbeat:Connect(function()
+        _0xp5q6r7s8()
+    end)
+end
+
+local function _0xb8c9d1e2()
+    if _0xp7q8r9 then
+        _0xp7q8r9:Disconnect()
+        _0xp7q8r9 = nil
+    end
+end
+
+local _0xj7k8l9m1 = _0x4d5e6f:CreateTab("Main", 4483362458)
+local _0xn2o3p4q5 = _0xj7k8l9m1:CreateSection("Auto Win System")
+
+local _0xtoggle1 = _0xj7k8l9m1:CreateToggle({
+   Name = "Auto Win",
+   CurrentValue = false,
+   Flag = "AutoWinToggle",
+   Callback = function(_0xr6s7t8u9)
+      _0xa1b2c3 = _0xr6s7t8u9
+      if _0xa1b2c3 then
+         _0xs1t2u3()
+         _0x1a2b3c:Notify({
+            Title = "Auto Win",
+            Content = "Activated!",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {}
+         })
+      else
+         _0xn4o5p6q7()
+         _0x1a2b3c:Notify({
+            Title = "Auto Win",
+            Content = "Deactivated!",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {}
+         })
+      end
+   end,
+})
+
+local _0xtoggle2 = _0xj7k8l9m1:CreateToggle({
+   Name = "Inf Rebirth",
+   CurrentValue = false,
+   Flag = "InfRebirthToggle",
+   Callback = function(_0xv1w2x3y4)
+      _0xg7h8i9 = _0xv1w2x3y4
+      if _0xg7h8i9 then
+         _0xd2e3f4g5()
+         _0x1a2b3c:Notify({
+            Title = "Inf Rebirth",
+            Content = "Activated! (1200+ per second)",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {}
+         })
+      else
+         _0xh6i7j8k9()
+         _0x1a2b3c:Notify({
+            Title = "Inf Rebirth",
+            Content = "Deactivated!",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {}
+         })
+      end
+   end,
+})
+
+local _0xtoggle3 = _0xj7k8l9m1:CreateToggle({
+   Name = "Auto Speed Boost",
+   CurrentValue = false,
+   Flag = "AutoSpeedToggle",
+   Callback = function(_0xz5a6b7c8)
+      _0xm4n5o6 = _0xz5a6b7c8
+      if _0xm4n5o6 then
+         _0xx4y5z6a7()
+         _0x1a2b3c:Notify({
+            Title = "Auto Speed",
+            Content = "Activated! (600+ per second)",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {}
+         })
+      else
+         _0xb8c9d1e2()
+         _0x1a2b3c:Notify({
+            Title = "Auto Speed",
+            Content = "Deactivated!",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {}
+         })
+      end
+   end,
+})
+
+local _0xkeybind1 = _0xj7k8l9m1:CreateKeybind({
+   Name = "Toggle Auto Win",
+   CurrentKeybind = "E",
+   HoldToInteract = false,
+   Flag = "AutoWinKeybind",
+   Callback = function(_0xkeypressed)
+      _0xtoggle1:Set(not _0xa1b2c3)
+   end,
+})
+
+local _0xkeybind2 = _0xj7k8l9m1:CreateKeybind({
+   Name = "Toggle Inf Rebirth",
+   CurrentKeybind = "R",
+   HoldToInteract = false,
+   Flag = "InfRebirthKeybind",
+   Callback = function(_0xkeypressed)
+      _0xtoggle2:Set(not _0xg7h8i9)
+   end,
+})
+
+local _0xkeybind3 = _0xj7k8l9m1:CreateKeybind({
+   Name = "Toggle Auto Speed",
+   CurrentKeybind = "Q",
+   HoldToInteract = false,
+   Flag = "AutoSpeedKeybind",
+   Callback = function(_0xkeypressed)
+      _0xtoggle3:Set(not _0xm4n5o6)
+   end,
+})
+
+local _0xd9e1f2g3 = _0x4d5e6f:CreateTab("Info", 4483362458)
+local _0xh4i5j6k7 = _0xd9e1f2g3:CreateSection("Information")
+
+_0xd9e1f2g3:CreateParagraph({Title = "Script Info", Content = "Script by MEHMOS35\n\nPress E to toggle Auto Win\nPress R to toggle Inf Rebirth\nPress Q to toggle Auto Speed"})
+
+_0x1a2b3c:Notify({
+   Title = "Mehmos Script",
+   Content = "Successfully loaded!",
+   Duration = 5,
+   Image = 4483362458,
+   Actions = {}
+})
