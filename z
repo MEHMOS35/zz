@@ -4,7 +4,7 @@ local _0x4d5e6f = _0x1a2b3c:CreateWindow({
    LoadingTitle = "Mehmos Script",
    LoadingSubtitle = "by MEHMOS35",
    ConfigurationSaving = {
-      Enabled = false,
+      Enabled = true,
       FolderName = nil,
       FileName = "MehmosConfig"
    },
@@ -12,10 +12,9 @@ local _0x4d5e6f = _0x1a2b3c:CreateWindow({
       Enabled = false,
       Invite = "noinvitelink",
       RememberJoins = true
-   },
- 
    }
-)
+   
+})
 
 local _0x7g8h9i = game:GetService("Players")
 local _0x1j2k3l = game:GetService("RunService")
@@ -216,6 +215,20 @@ local _0xd9e1f2g3 = _0x4d5e6f:CreateTab("Info", 4483362458)
 local _0xh4i5j6k7 = _0xd9e1f2g3:CreateSection("Information")
 
 _0xd9e1f2g3:CreateParagraph({Title = "Script Info", Content = "Script by MEHMOS35\n\nPress E to toggle Auto Win\nPress R to toggle Inf Rebirth\nPress Q to toggle Auto Speed"})
+
+_0xd9e1f2g3:CreateButton({
+   Name = "Copy Key Link",
+   Callback = function()
+      setclipboard("https://work.ink/2icq/mehmos35-key-system-1")
+      _0x1a2b3c:Notify({
+         Title = "Key Link",
+         Content = "Link copied to clipboard!",
+         Duration = 3,
+         Image = 4483362458,
+         Actions = {}
+      })
+   end,
+})
 
 _0x1a2b3c:Notify({
    Title = "Mehmos Script",
